@@ -64,7 +64,7 @@ module.exports.register = async (req, res, next) => {
     // newStudent.section = classe.substr(1, classe.length);
     newStudent.active = false;
     newStudent.isConnected = false;
-    newStudent.status = true;
+    newStudent.status = false;
     newStudent.avatar = req.body.avatar;
     newStudent.highSchool = req.body.highSchool;
     newStudent.created_at = ("0" + date_ob.getDate()).slice(-2);

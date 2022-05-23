@@ -44,9 +44,9 @@ module.exports.createProf = async (req, res, next) => {
       return res
         .status(400)
         .json({ msg: "Le mot de passe doit comporter au moins 8 caractères ." });
-/*
-     if (/^[A-Za-z]+$/i.test(password) == false)
-      return res.status(400).json({ msg: "The format incorrect" });*/
+// /*
+//      if (/^[A-Za-z]+$/i.test(password) == false)
+//       return res.status(400).json({ msg: "The format incorrect" });*/
 
     if (password !== passwordCheck)
       return res

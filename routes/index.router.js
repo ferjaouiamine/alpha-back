@@ -54,8 +54,10 @@ const ctrlUpload = require("../controllers/fileUpload/fileUpload.controller");
 const userbyid = require("../controllers/auth/getUserById");
 const checkToken = require("../config/jwtHelper");
 const jwtHelper = require("../config/jwtHelper");
+const { sendMail } = require("../controllers/mailer/indexMailer");
 //uploadFiles
 // const upload = require ("../controllers/utils/multer");
+// router.get("/uploads/",upload);
 
 //auth
 router.post("/login", ctrlAuth.authenticate);
@@ -105,5 +107,7 @@ router.post(
   avatarUpload.single("file"),
   ctrlUpload.uploadAvatar
 );
+
+router.post('/send-mail', sendMail);
 
 module.exports = router;

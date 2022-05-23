@@ -19,8 +19,8 @@ const cloudinaryImageUploadMethod = async file => {
 
 module.exports.addCourse = async(req, res, next) => {
   let response;
-  //const uploader = await cloudinary.uploader.upload(req.file.path);
-  //const uploader = async (path) => await cloudinary.uploader.uploads(path, 'Images');
+//   const uploader = await cloudinary.uploader.upload(req.file.path);
+//   const uploader = async (path) => await cloudinary.uploader.uploads(path, 'Images');
 //  /*
 //   const uploader = async (path) => await cloudinary.uploader.upload (path, 'file');
   

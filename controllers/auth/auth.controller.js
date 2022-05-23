@@ -10,9 +10,12 @@ module.exports.authenticate = (req, res, next) => {
     return res.status(400).json({ msg: "Not all fields have been entered." });
   passport.authenticate("local", (err, user, info) => {
     console.log("user ->>> " + user);
+
+
+    if (!user.status) return res.status(400).json({ msg: 'student account desactivated' });
     if (err) {
       return res.status(400).json(err);
-    } else if (user) {
+    } else if (user && user.status) {
       console.log("generating token");
       console.log(user.generateJwt());
       return res.status(200).json({
@@ -20,7 +23,7 @@ module.exports.authenticate = (req, res, next) => {
         user: user,
       });
     } else {
-      return res.status(400).json(info);
+      return res.status(400).json({msg : info});
     }
   })(req, res);
 };

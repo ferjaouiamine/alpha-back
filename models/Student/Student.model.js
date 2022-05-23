@@ -20,6 +20,7 @@ var StudentShema = mongoose.Schema({
   role: { type: String, },
   classe: { type: String, },
   section: { type: String, },
+  resetToken: { type: String},
   profs: [
     {
       profid: String,
@@ -49,4 +50,9 @@ StudentShema.methods.generateJwt = function () {
   });
 };
 
-mongoose.model("Student", StudentShema);
+
+const Student = mongoose.model('Student', StudentShema);
+
+module.exports = Student;
+
+// mongoose.model("Student", StudentShema);
