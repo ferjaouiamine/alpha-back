@@ -6,18 +6,18 @@ module.exports.sendMail = async (req,res) =>{
     let transporter =nodemailer.createTransport({
         service:'gmail',
     auth:{
-      user:process.env.EMAIL || 'ferjaoui44@gmail.com',
-      pass:process.env.PASSWORD || '03/12/1998ff'
+      user:process.env.EMAIL ,
+      pass:process.env.PASSWORD 
     }
     
     
     });
-    
     // Step 2
     let mailOptions = {
-      from: req.body.email, // TODO: email sender
+      from:req.body.email, // TODO: email sender
       to: 'jihedy126@gmail.com', // TODO: email receiver
-      subject: req.body.subject,
+      subject: 'Alpha learning',
+      // subject: req.body.subject,
       text: req.body.text
     };
     // Step 3
@@ -29,6 +29,7 @@ module.exports.sendMail = async (req,res) =>{
       console.log('Email sent!!!');
       return res.status(200).json({msg :'mail send successfully'})
     });
+    
 }
 
     

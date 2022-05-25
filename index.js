@@ -14,7 +14,7 @@ const bcrypt = require('bcryptjs')
 //zeydo lel web rtc
 const fetch = require('node-fetch');
 //node mailer importation 
-const nodemailer =require('nodemailer');
+// const nodemailer =require('nodemailer');
 const Student = require ('./models/Student/Student.model')
 
 const path = require("path");
@@ -38,15 +38,15 @@ app.use(cors(corsOptions));
 app.use(passport.initialize());
 app.use("/api", routerIndex);
 
-let transporter =nodemailer.createTransport({
-  service:'gmail',
-auth:{
-user:process.env.EMAIL || 'ferjaoui44@gmail.com',
-pass:process.env.PASSWORD || '03/12/1998ff'
-}
+// let transporter =nodemailer.createTransport({
+//   service:'gmail',
+// auth:{
+// user:process.env.EMAIL || 'ferjaoui44@gmail.com',
+// pass:process.env.PASSWORD || '03/12/1998ff'
+// }
 
 
-});
+// });
 
 
 

@@ -48,7 +48,9 @@ StudentShema.methods.generateJwt = function () {
   return jwt.sign({ _id: this._id, admin: this.admin }, process.env.SECRET, {
     expiresIn: process.env.JWT_EXP,
   });
+  
 };
+
 
 
 const Student = mongoose.model('Student', StudentShema);
