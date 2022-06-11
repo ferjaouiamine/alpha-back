@@ -63,7 +63,7 @@ module.exports.createProf = async (req, res, next) => {
     newProf.isConnected = false;
     newProf.avatar = req.body.avatar;
     newProf.admin = false;
-    newProf.status = true;
+    newProf.status = false;
     newProf.HighSchool = req.body.HighSchool;
     newProf.role = "0";
     newProf.sexe = req.body.sexe;
@@ -214,7 +214,7 @@ module.exports.updateProf = (req, res, next) => {
 
 module.exports.deleteProf = (req, res, next) => {
   let response;
-  Prof.remove({ _id: req.params.id }, function (err, doc) {
+  Prof.deleteOne({ _id: req.params.id }, function (err, doc) {
     if (err) {
       response = {
         msg: "failed",

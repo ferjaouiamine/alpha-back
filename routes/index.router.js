@@ -27,6 +27,7 @@ const fileFilter = (req, file, cb) => {
     cb(null, false);
   }
 };
+
 const avatarFilter = (req, file, cb) => {
   if (file.mimetype == "image/jpeg" || file.mimetype == "image/png") {
     cb(null, true);
@@ -55,6 +56,7 @@ const userbyid = require("../controllers/auth/getUserById");
 const checkToken = require("../config/jwtHelper");
 const jwtHelper = require("../config/jwtHelper");
 const { sendMail } = require("../controllers/mailer/indexMailer");
+
 //uploadFiles
 // const upload = require ("../controllers/utils/multer");
 // router.get("/uploads/",upload);

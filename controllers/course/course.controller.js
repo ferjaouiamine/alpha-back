@@ -99,14 +99,14 @@ module.exports.getAllCourses = (req, res) => {
         data: [],
         err: err,
       };
-      return res.send(response);
+      return res.status(400).send(response);
     }
     let respone = {
       msg: "success",
       data: doc,
       totalPages: totalPages,
     };
-    return res.send(respone);
+    return res.status(200).send(respone);
   });
 };
 

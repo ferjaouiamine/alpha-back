@@ -61,10 +61,12 @@ module.exports.register = async (req, res, next) => {
     newStudent.role = "1";
     newStudent.birthday = req.body.birthdayDate;
     newStudent.sexe = req.body.sexe;
-    // newStudent.section = classe.substr(1, classe.length);
+    newStudent.section = req.body.classe.substr(1,  req.body.classe.length);
+    newStudent.classe = req.body.classe[0];
     newStudent.active = false;
     newStudent.isConnected = false;
     newStudent.status = false;
+    newStudent.highSchool = req.body.highSchool
     newStudent.avatar = req.body.avatar;
     newStudent.highSchool = req.body.highSchool;
     newStudent.created_at = ("0" + date_ob.getDate()).slice(-2);

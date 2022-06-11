@@ -10,11 +10,9 @@ module.exports.authenticate = (req, res, next) => {
     return res.status(400).json({ msg: "Not all fields have been entered." });
   passport.authenticate("local", (err, user, info) => {
     console.log("user ->>> " + user);
-
-
-    if (!user.status) return res.status(400).json({ msg: 'student account desactivated' });
-    if (err) {
-      return res.status(400).json(err);
+    if (user.status === false) return res.status(400).json({ msg: 'Ce compte est désactiver' });
+    if (err || !user) {
+      return res.status(400).json({'msg' : 'Invalide emaile ou mot de passe'});
     } else if (user && user.status) {
       console.log("generating token");
       console.log(user.generateJwt());

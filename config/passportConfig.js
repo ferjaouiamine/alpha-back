@@ -20,11 +20,11 @@ passport.use(
             Cuser = true;
             return done(null, user);
           }
-          if (!Cuser) {
-            return done(null, false, {
-              msg: "email or password is incorrect",
-            });
+          else {
+            return done(null, false, "email or password is incorrect")
           }
+
+
         });
       }
     });
